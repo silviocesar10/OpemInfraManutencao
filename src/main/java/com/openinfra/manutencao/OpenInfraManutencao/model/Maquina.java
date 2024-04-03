@@ -1,10 +1,15 @@
 package com.openinfra.manutencao.OpenInfraManutencao.model;
 
-import jakarta.persistence.OneToOne;
-import lombok.*;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+
+
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
-import javax.persistence.*;
-import javax.validation.constraints.*;
 
 
 @Entity

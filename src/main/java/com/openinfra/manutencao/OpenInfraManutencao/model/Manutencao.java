@@ -1,14 +1,13 @@
 package com.openinfra.manutencao.OpenInfraManutencao.model;
 
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
-import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -60,6 +59,10 @@ public class Manutencao implements Serializable {
         DateTimeFormatter formatters = DateTimeFormatter.ofPattern("DD/MM/YYYY");
         String text = date.format(formatters);
         this.dataManutencao = LocalDate.parse(text, formatters);
+    }
+
+    public void setDataManutencao(LocalDate dataManutencao) {
+        this.dataManutencao = dataManutencao;
     }
 
     public String getTipo() {
