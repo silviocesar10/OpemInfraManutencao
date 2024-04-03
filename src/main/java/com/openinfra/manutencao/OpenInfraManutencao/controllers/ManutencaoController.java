@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.openinfra.manutencao.OpenInfraManutencao.services.*;
 import com.openinfra.manutencao.OpenInfraManutencao.model.*;
+import com.openinfra.manutencao.OpenInfraManutencao.services.exceptions.*;
 
 @RestController
 @RequestMapping(value = "/manutencaos")
