@@ -6,7 +6,9 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.openinfra.manutencao.OpenInfraManutencao.repositories.*;
-import com.openinfra.manutencao.OpenInfraManutencao.model.*;
+import com.openinfra.manutencao.OpenInfraManutencao.model.Manutencao;
+import com.openinfra.manutencao.OpenInfraManutencao.services.exceptions.ObjectNotFoundException;
+import com.openinfra.manutencao.OpenInfraManutencao.services.exceptions.DataIntegrityException;
 @Service
 public class ManutencaoService {
     @Autowired
@@ -29,13 +31,13 @@ public class ManutencaoService {
 
     public Manutencao insert(Manutencao obj)
     {
-        obj.setidManutencao(null);;
+        obj.setIdManutencao(null);
         return repository.save(obj);
     }
 
     public Manutencao update(Manutencao obj)
     {
-        findById(obj.getidManutencao());
+        findById(obj.getIdManutencao());
         try
         {
             return repository.save(obj);
@@ -54,8 +56,8 @@ public class ManutencaoService {
             throw new DataIntegrityException("Não é possível excluir um Usuario");
         }
     }
-    public Collection<?> countUsuarios() {
-        Collection<?> collection = repository.countUsuarios();
+    public Collection<?> countManutencoes() {
+        Collection<?> collection = repository.countManutencao();
         return collection;
     }
 

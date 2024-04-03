@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.openinfra.manutencao.OpenInfraManutencao.repositories.*;
 import com.openinfra.manutencao.OpenInfraManutencao.model.*;
-
+import com.openinfra.manutencao.OpenInfraManutencao.services.exceptions.*;
 
 @Service
 public class MaquinaService {
@@ -30,13 +30,13 @@ public class MaquinaService {
 
     public Maquina insert(Maquina obj)
     {
-        obj.setidMaquina(null);;
+        obj.setIdMaquina(null);
         return repository.save(obj);
     }
 
     public Maquina update(Maquina obj)
     {
-        findById(obj.getidMaquina());
+        findById(obj.getIdMaquina());
         try
         {
             return repository.save(obj);
@@ -55,8 +55,8 @@ public class MaquinaService {
             throw new DataIntegrityException("Não é possível excluir um Usuario");
         }
     }
-    public Collection<?> countUsuarios() {
-        Collection<?> collection = repository.countUsuarios();
+    public Collection<?> countMaquinas() {
+        Collection<?> collection = repository.countMaquinao();
         return collection;
     }
 

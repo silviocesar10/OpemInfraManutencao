@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.openinfra.manutencao.OpenInfraManutencao.repositories.*;
 import com.openinfra.manutencao.OpenInfraManutencao.model.*;
+import com.openinfra.manutencao.OpenInfraManutencao.services.exceptions.*;
 
 @Service
 public class UsuarioService {
@@ -29,13 +30,13 @@ public class UsuarioService {
 
     public Usuario insert(Usuario obj)
     {
-        obj.setidUsuario(null);;
+        obj.setIdUsuario(null);;
         return repository.save(obj);
     }
 
     public Usuario update(Usuario obj)
     {
-        findById(obj.getidUsuario());
+        findById(obj.getIdUsuario());
         try
         {
             return repository.save(obj);
@@ -55,7 +56,7 @@ public class UsuarioService {
         }
     }
     public Collection<?> countUsuarios() {
-        Collection<?> collection = repository.countUsuarios();
+        Collection<?> collection = repository.countUsuario();
         return collection;
     }
 
