@@ -1,13 +1,12 @@
 package com.openinfra.manutencao.OpenInfraManutencao.repositories;
 
-import com.openinfra.administration.OpenInfraAdministration.model.Administration;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import com.openinfra.administration.OpenInfraAdministration.model.*;
 import org.springframework.transaction.annotation.Transactional;
-
+import com.openinfra.manutencao.OpenInfraManutencao.model.Administration;
 import java.util.Collection;
 
 
